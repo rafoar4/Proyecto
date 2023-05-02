@@ -17,10 +17,17 @@ import java.util.ArrayList;
 public class ListaClientesAdapter extends RecyclerView.Adapter<ListaClientesAdapter.ClienteViewHolder> {
 
     Context context;
-    ArrayList<Usuario> arrayList;
+    ArrayList<Usuario> arrayList =new ArrayList<>();
 
-    public ListaClientesAdapter(Context context, ArrayList<Usuario> arrayList) {
+    public ListaClientesAdapter(Context context) {
         this.context = context;
+    }
+
+    public ArrayList<Usuario> getArrayList() {
+        return arrayList;
+    }
+
+    public void setArrayList(ArrayList<Usuario> arrayList) {
         this.arrayList = arrayList;
     }
 
@@ -52,7 +59,7 @@ public class ListaClientesAdapter extends RecyclerView.Adapter<ListaClientesAdap
 
         public ClienteViewHolder(@NonNull View itemView) {
             super(itemView);
-            nombre=itemView.findViewById(R.id.n_nombre);
+            nombre=itemView.findViewById(R.id.nombreCliente);
             hora=itemView.findViewById(R.id.horaMensaje);
 
         }

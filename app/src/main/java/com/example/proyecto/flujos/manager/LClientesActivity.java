@@ -47,39 +47,36 @@ public class LClientesActivity extends AppCompatActivity {
                 .collect(Collectors.toCollection(ArrayList::new));
         Log.e("TAG", "onCreate: "+usuarios.size());
 
-        adapter= new ListaClientesAdapter(LClientesActivity.this,usuarios);
+        adapter= new ListaClientesAdapter(LClientesActivity.this);
 
-        recyclerView.setAdapter(adapter);
 
 
     }
 
     private void EventChangeListener() {
         db.collection("usuario")
-                .addSnapshotListener(new EventListener<QuerySnapshot>() {
-                    @Override
-                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-                        if (error!=null){
-                            Log.e("msg","Firestore error");
-                            return;
+                .addSnapshotListener((value, error) -> {
+                    if (error!=null){
+                        Log.e("msg","Firestore error");
+                        return;
+                    }
+                    for (DocumentChange dc: value.getDocumentChanges()){
+                        Log.e("msg", String.valueOf(dc.getDocument().getData()));
+                        if (dc.getType()==DocumentChange.Type.ADDED){
+                            Usuario u= dc.getDocument().toObject(Usuario.class);
+                            Log.e("TAG", "onEvent: "+u.getNombre() );
+                            usuarios.add(u);
+                            Log.e("TAG", "onCreate: "+usuarios.size());
+                            Log.e("msg","no error");
                         }
-                        for (DocumentChange dc: value.getDocumentChanges()){
-                            Log.e("msg", String.valueOf(dc.getDocument().getData()));
-                            if (dc.getType()==DocumentChange.Type.ADDED){
-                                Usuario u= dc.getDocument().toObject(Usuario.class);
-                                Log.e("TAG", "onEvent: "+u.getNombre() );
-                                usuarios.add(u);
-                                Log.e("TAG", "onCreate: "+usuarios.size());
-                                Log.e("msg","no error");
-                            }
-
-                        }
-                        adapter.notifyDataSetChanged();
 
                     }
+                    adapter.setArrayList(usuarios);
+                    recyclerView.setAdapter(adapter);
+                    //adapter.notifyDataSetChanged();
+
                 });
         Log.e("TAG4", "onCreate: "+usuarios.size());
-
 
 
     }
