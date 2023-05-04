@@ -1,4 +1,4 @@
-package com.example.proyecto.flujos.manager;
+package com.example.proyecto.flujos.cliente;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -16,32 +16,30 @@ import com.example.proyecto.modelPlanta.Planta;
 
 import java.util.ArrayList;
 
-public class ListaPlantasAdapter extends RecyclerView.Adapter<ListaPlantasAdapter.PlantaViewHolder> {
-
-
+public class ListaSingPlantasAdapter extends RecyclerView.Adapter<ListaSingPlantasAdapter.SingHolder> {
     Context context;
     ArrayList<Planta> arrayList;
 
-    public ListaPlantasAdapter(Context context, ArrayList<Planta> arrayList) {
+    public ListaSingPlantasAdapter(Context context, ArrayList<Planta> arrayList) {
         this.context = context;
         this.arrayList = arrayList;
     }
 
     @NonNull
     @Override
-    public com.example.proyecto.flujos.manager.ListaPlantasAdapter.PlantaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_plantas_mult,parent,false);
-        return new PlantaViewHolder(view);
+    public SingHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.item_plantas_sing,parent,false);
+        return new SingHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ListaPlantasAdapter.PlantaViewHolder holder, int position) {
-
+    public void onBindViewHolder(@NonNull SingHolder holder, int position) {
         Planta planta= arrayList.get(position);
         holder.nombre.setText(planta.getNombre());
         holder.precio.setText(planta.getPrecio());
         holder.stock.setText(planta.getStock());
-        Glide.with(context).load(planta.getI_perfil()).into(holder.imageView);
+        Glide.with(context).load(planta.getI_perfil().toString()).into(holder.imageView);
+
         //Log.d("msg",String.valueOf(planta.getI_perfil()));
         //holder.uri.setImageURI(Uri.parse(planta.getI_perfil()));
 
@@ -51,20 +49,17 @@ public class ListaPlantasAdapter extends RecyclerView.Adapter<ListaPlantasAdapte
     public int getItemCount() {
         return arrayList.size();
     }
-    public class PlantaViewHolder extends RecyclerView.ViewHolder{
+
+    public class SingHolder extends RecyclerView.ViewHolder{
         TextView nombre, precio,stock;
         ImageView imageView;
 
-
-
-        public PlantaViewHolder(@NonNull View itemView) {
+        public SingHolder(@NonNull View itemView) {
             super(itemView);
-            nombre=itemView.findViewById(R.id.n_nombre);
-            stock=itemView.findViewById(R.id.n_stock);
-            precio=itemView.findViewById(R.id.n_precio);
-            imageView=itemView.findViewById(R.id.imageView);
-
-
+            nombre=itemView.findViewById(R.id.nombrePS);
+            stock=itemView.findViewById(R.id.stockCS);
+            precio=itemView.findViewById(R.id.precioS);
+            imageView=itemView.findViewById(R.id.imagePs);
         }
     }
 }

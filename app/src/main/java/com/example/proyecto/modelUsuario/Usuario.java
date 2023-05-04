@@ -18,15 +18,26 @@ rol
     String nombre;
     String rol;
 
+    String direccion;
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
     public Usuario(){
     }
 
-    public Usuario(String password, String apellido,  String correo, String nombre, String rol) {
+    public Usuario(String password, String apellido,  String correo,String direccion,String nombre, String rol) {
         this.apellido = apellido;
         this.password = password;
         this.correo = correo;
         this.nombre = nombre;
         this.rol = rol;
+        this.direccion=direccion;
     }
 
     public String getApellido() {

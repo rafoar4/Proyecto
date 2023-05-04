@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.proyecto.R;
 import com.example.proyecto.modelPlanta.Planta;
@@ -28,6 +31,8 @@ public class LClientesActivity extends AppCompatActivity {
     ArrayList<Usuario> usuarios;
     ArrayList<Usuario> clientes;
 
+    Button b_regresar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,12 +47,18 @@ public class LClientesActivity extends AppCompatActivity {
         usuarios = new ArrayList<Usuario>();
         EventChangeListener();
 
-        clientes = usuarios.stream()
-                .filter(usuario -> usuario.getRol().equals("cliente"))
-                .collect(Collectors.toCollection(ArrayList::new));
-        Log.e("TAG", "onCreate: "+usuarios.size());
-
         adapter= new ListaClientesAdapter(LClientesActivity.this);
+
+        b_regresar= findViewById(R.id.regresar);
+        b_regresar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent= new Intent(LClientesActivity.this, ManagerActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
 
 
@@ -71,7 +82,11 @@ public class LClientesActivity extends AppCompatActivity {
                         }
 
                     }
-                    adapter.setArrayList(usuarios);
+                    clientes = usuarios.stream()
+                            .filter(usuario -> usuario.getRol().equals("cliente"))
+                            .collect(Collectors.toCollection(ArrayList::new));
+                    Log.e("TAG", "onCreate: "+usuarios.size());
+                    adapter.setArrayList(clientes);
                     recyclerView.setAdapter(adapter);
                     //adapter.notifyDataSetChanged();
 

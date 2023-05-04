@@ -108,6 +108,7 @@ public class ManagerActivity extends AppCompatActivity {
                         for (DocumentChange dc: value.getDocumentChanges()){
                             if (dc.getType()==DocumentChange.Type.ADDED){
                                 plantas.add(dc.getDocument().toObject(Planta.class));
+                                Log.e("msg",dc.getDocument().toObject(Planta.class).getI_perfil());
                             }
 
                         }
