@@ -130,6 +130,7 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/relativeLayout3"
         android:layout_width="230dp"
         android:layout_height="45dp"
         android:layout_marginTop="8dp"
@@ -163,5 +164,16 @@
             android:text="Continuar con Google"
             android:textSize="15sp" />
     </RelativeLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:onClick="LISTA"
+        android:text="Ver Lista Plantas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

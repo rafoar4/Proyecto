@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.proyecto.flujos.cliente.LProductosActivity;
+import com.example.proyecto.flujos.cliente.ListaSingPlantasAdapter;
 
 public class Login extends AppCompatActivity {
 
@@ -19,4 +20,9 @@ public class Login extends AppCompatActivity {
         Intent iniciar = new Intent(this, LProductosActivity.class);
         startActivity(iniciar);
     }
+    public void LISTA(View view){
+        Intent iniciar = new Intent(this, ListaSingPlantasAdapter.class);
+        startActivity(iniciar);
+    }
+
 }
