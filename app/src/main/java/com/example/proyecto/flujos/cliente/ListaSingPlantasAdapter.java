@@ -13,12 +13,16 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.proyecto.R;
 import com.example.proyecto.modelPlanta.Planta;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 
 public class ListaSingPlantasAdapter extends RecyclerView.Adapter<ListaSingPlantasAdapter.SingHolder> {
     Context context;
     ArrayList<Planta> arrayList;
+
+    StorageReference storageReference;
 
     public ListaSingPlantasAdapter(Context context, ArrayList<Planta> arrayList) {
         this.context = context;
@@ -34,11 +38,12 @@ public class ListaSingPlantasAdapter extends RecyclerView.Adapter<ListaSingPlant
 
     @Override
     public void onBindViewHolder(@NonNull SingHolder holder, int position) {
+        storageReference= FirebaseStorage.getInstance().getReference("images");
         Planta planta= arrayList.get(position);
         holder.nombre.setText(planta.getNombre());
         holder.precio.setText(planta.getPrecio());
         holder.stock.setText(planta.getStock());
-        Glide.with(context).load(planta.getI_perfil().toString()).into(holder.imageView);
+        Glide.with(context).load(planta.getI_perfil()).into(holder.imageView);
 
         //Log.d("msg",String.valueOf(planta.getI_perfil()));
         //holder.uri.setImageURI(Uri.parse(planta.getI_perfil()));
