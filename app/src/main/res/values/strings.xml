@@ -11,4 +11,12 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+
+    <string name="t_inicio_sesion">Inicio Sesión</string>
+    <string name="inicio_sesion">Iniciar Sesión</string>
+    <string name="registrate">¿No tienes cuenta? Registrate aquí</string>
+    <string name="check1">He leído y acepto los terminos y condiciones</string>
+    <string name="check2">¿Usted ha leido y aceptado los términos y condiciones para el tratamiento de sus datos personales contenidos en la Política de Privacidad Web?</string>
+    <string name="reg_aqui">Registro</string>
 </resources>

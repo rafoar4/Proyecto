@@ -5,6 +5,8 @@
     android:id="@+id/constrain"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="@color/fondo"
+    android:background="@color/fondo"
     tools:context=".flujos.manager.ManagerActivity">
 
     <androidx.recyclerview.widget.RecyclerView

@@ -4,15 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="@color/fondo"
+    android:background="@color/fondo"
     tools:context=".flujos.manager.LClientesActivity">
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+        android:id="@+id/l_cliente"
+
+        android:layout_width="328dp"
         android:layout_height="wrap_content"
-        android:text="lclientes"
+        android:layout_marginTop="29dp"
+        android:backgroundTint="#F2F3F2"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="9.8sp"
+        android:text="Lista de Clientes"
+        android:textAlignment="center"
+        android:textColor="#F2F3F2"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:lineHeight="33.8sp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
