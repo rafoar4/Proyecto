@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:backgroundTint="@color/fondo"
     android:background="@color/fondo"
-    tools:context=".MainActivity">
+    tools:context=".Login">
 
     <Button
         android:id="@+id/bt_iniciosesion"
         android:layout_width="200dp"
         android:layout_height="45dp"
-        android:layout_marginTop="436dp"
+        android:layout_marginTop="25dp"
+
+
         android:backgroundTint="#113027"
 
 
         android:fontFamily="sans-serif-medium"
 
-
         android:gravity="center_horizontal|center_vertical"
 
         android:letterSpacing="0.08"
-
         android:lineSpacingExtra="9.8sp"
         android:textAllCaps="false"
         android:textColor="#fcfcfc"
@@ -32,9 +33,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:onClick="registrarse"
-        tools:text="Registrarse" />
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+        tools:onClick="ingresar"
+        tools:text="Ingresar" />
 
     <TextView
         android:id="@+id/t_inicio_sesion"
@@ -46,7 +47,7 @@
         android:fontFamily="sans-serif-black"
         android:gravity="center_horizontal"
         android:lineSpacingExtra="9.8sp"
-        android:text="@string/reg_aqui"
+        android:text="@string/t_inicio_sesion"
         android:textAlignment="center"
         android:textColor="#F2F3F2"
         android:textSize="24sp"
@@ -93,90 +94,13 @@
             tools:text="Correo Electronico" />
 
     </RelativeLayout>
-    <RelativeLayout
-        android:id="@+id/nombreregistro"
-        android:layout_width="328dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="159dp"
-        android:layout_marginBottom="8dp"
-        android:background="#f2f3f2"
-        android:backgroundTint="#f2f3f2"
-        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <EditText
-            android:id="@+id/nombre"
-            android:layout_width="226dp"
-            android:layout_height="42dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="52dp"
-
-
-            android:layout_marginBottom="1dp"
-            android:fontFamily="sans-serif-medium"
-            android:inputType="textEmailAddress"
-            android:letterSpacing="0.01"
-            android:lineSpacingExtra="8sp"
-            android:textColor="#99273431"
-            android:textColorHint="#F2F3F2"
-            android:textSize="16sp"
-            android:textStyle="normal"
-            tools:text="Nombre" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/apellidoregistro"
-        android:layout_width="328dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="159dp"
-        android:layout_marginBottom="8dp"
-        android:background="#f2f3f2"
-        android:backgroundTint="#f2f3f2"
-        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.977">
-
-        <EditText
-            android:id="@+id/apellido"
-            android:layout_width="226dp"
-            android:layout_height="42dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="52dp"
-
-
-            android:layout_marginBottom="1dp"
-            android:fontFamily="sans-serif-medium"
-            android:inputType="textEmailAddress"
-            android:letterSpacing="0.01"
-            android:lineSpacingExtra="8sp"
-            android:textColor="#99273431"
-            android:textColorHint="#F2F3F2"
-            android:textSize="16sp"
-            android:textStyle="normal"
-            tools:text="Apellido" />
-
-    </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="328dp"
         android:layout_height="53dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="144dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="16dp"
         android:background="#F2F3F2"
         android:backgroundTint="#F2F3F2"
@@ -239,6 +163,5 @@
             android:text="Continuar con Google"
             android:textSize="15sp" />
     </RelativeLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
