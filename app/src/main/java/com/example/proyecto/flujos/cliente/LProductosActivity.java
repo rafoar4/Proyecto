@@ -5,11 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
 
+import com.example.proyecto.Login;
 import com.example.proyecto.R;
 import com.example.proyecto.modelPlanta.Planta;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -24,6 +28,10 @@ public class LProductosActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     ArrayList<Planta> plantas;
     ListaSingPlantasAdapter adapter;
+
+    Button logout;
+
+    FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +48,14 @@ public class LProductosActivity extends AppCompatActivity {
 
         recyclerView.setAdapter(adapter);
         EventChangeListener();
+
+        logout=findViewById(R.id.logout);
+
+        auth=FirebaseAuth.getInstance();
+        logout.setOnClickListener(v -> {
+            auth.signOut();
+            startActivity(new Intent(LProductosActivity.this, Login.class));
+        });
     }
 
     private void EventChangeListener() {

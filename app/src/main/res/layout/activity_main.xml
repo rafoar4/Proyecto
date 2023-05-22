@@ -4,25 +4,85 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/fondo"
     android:background="@color/fondo"
+    android:backgroundTint="@color/fondo"
     tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout22"
+        android:layout_width="328dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="16dp"
+        android:background="#F2F3F2"
+        android:backgroundTint="#F2F3F2"
+        app:layout_constraintEnd_toEndOf="@+id/relativeLayout"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
+
+        <EditText
+            android:id="@+id/t_pass2"
+            android:layout_width="224dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="53dp"
+            android:layout_marginBottom="1dp"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.01"
+
+
+            android:lineSpacingExtra="8sp"
+            android:text="Repita Contraseña"
+            android:textColor="#99273431"
+            android:textColorHint="#F2F3F2"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout23"
+        android:layout_width="328dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="16dp"
+        android:background="#F2F3F2"
+        android:backgroundTint="#F2F3F2"
+        app:layout_constraintEnd_toEndOf="@+id/relativeLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2">
+
+        <EditText
+            android:id="@+id/t_direc"
+            android:layout_width="224dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="53dp"
+            android:layout_marginBottom="1dp"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="0.01"
+
+
+            android:lineSpacingExtra="8sp"
+            android:text="Direccion"
+            android:textColor="#99273431"
+            android:textColorHint="#F2F3F2"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+    </RelativeLayout>
 
     <Button
         android:id="@+id/bt_iniciosesion"
         android:layout_width="200dp"
         android:layout_height="45dp"
-        android:layout_marginTop="436dp"
+        android:layout_marginTop="32dp"
+
+
         android:backgroundTint="#113027"
 
 
         android:fontFamily="sans-serif-medium"
 
-
         android:gravity="center_horizontal|center_vertical"
 
         android:letterSpacing="0.08"
-
         android:lineSpacingExtra="9.8sp"
         android:text="Registrarse"
         android:textAllCaps="false"
@@ -33,7 +93,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout22"
         tools:onClick="registrarse" />
 
     <TextView
@@ -60,14 +120,13 @@
         android:id="@+id/relativeLayout2"
         android:layout_width="328dp"
         android:layout_height="53dp"
-        android:layout_marginTop="159dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="16dp"
         android:background="#f2f3f2"
         android:backgroundTint="#f2f3f2"
-        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/apellidoregistro">
 
         <EditText
             android:id="@+id/t_email"
@@ -93,16 +152,16 @@
             android:textStyle="normal" />
 
     </RelativeLayout>
+
     <RelativeLayout
         android:id="@+id/nombreregistro"
         android:layout_width="328dp"
         android:layout_height="53dp"
-        android:layout_marginTop="159dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="124dp"
         android:background="#f2f3f2"
         android:backgroundTint="#f2f3f2"
-        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -135,16 +194,13 @@
         android:id="@+id/apellidoregistro"
         android:layout_width="328dp"
         android:layout_height="53dp"
-        android:layout_marginTop="159dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="16dp"
         android:background="#f2f3f2"
         android:backgroundTint="#f2f3f2"
-        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.977">
+        app:layout_constraintTop_toBottomOf="@+id/nombreregistro">
 
         <EditText
             android:id="@+id/apellido"
@@ -176,14 +232,14 @@
         android:layout_width="328dp"
         android:layout_height="53dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="144dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:background="#F2F3F2"
         android:backgroundTint="#F2F3F2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2">
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout23">
 
         <EditText
             android:id="@+id/t_pass"
@@ -208,7 +264,7 @@
     <RelativeLayout
         android:layout_width="230dp"
         android:layout_height="45dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="44dp"
         android:background="#F2F3F2"
         android:onClick="registrarse"
         app:layout_constraintEnd_toEndOf="parent"
