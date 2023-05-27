@@ -44,7 +44,7 @@ public class ManagerActivity extends AppCompatActivity {
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
-        progressDialog.setMessage("fgaaaaaaaa");
+        progressDialog.setMessage("Cargando manager");
         progressDialog.show();
 
         recyclerView=findViewById(R.id.recyclerView);

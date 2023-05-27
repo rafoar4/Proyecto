@@ -9,11 +9,34 @@
     android:background="@color/fondo"
     tools:context=".flujos.manager.ManagerActivity">
 
+    <TextView
+        android:id="@+id/t_ag_planta2"
+
+        android:layout_width="328dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="#FFFFFF"
+        android:fontFamily="@font/amatica_sc_bold"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="9.8sp"
+        android:text="Lista de plantas"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.361"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lineHeight="33.8sp" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="382dp"
-        android:layout_height="552dp"
-        android:layout_marginTop="96dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginBottom="105dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,7 +45,7 @@
         android:id="@+id/addPlant"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="12dp"
         android:layout_marginBottom="20dp"
         android:text="Añadir Planta"
         app:layout_constraintBottom_toTopOf="@+id/recyclerView"
