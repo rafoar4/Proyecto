@@ -96,6 +96,6 @@
     <color name="CustomColor36">#59EAF8</color>
     <color name="CustomColor37">#5DFEDF</color>
     <color name="CustomColor38">#5B447E</color>
-    <color name="fondo">#51aa95</color>
-    <color name="CustomColor40">#00884D</color>
+    <color name="fondo">#FFFFFF</color>
+    <color name="boton">#113027</color>
 </resources>

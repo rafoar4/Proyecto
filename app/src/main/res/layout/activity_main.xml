@@ -29,7 +29,7 @@
             android:fontFamily="sans-serif-medium"
             android:letterSpacing="0.01"
 
-
+            android:inputType="textPassword"
             android:lineSpacingExtra="8sp"
             android:text="Repita Contraseña"
             android:textColor="#99273431"
@@ -75,7 +75,7 @@
         android:layout_marginTop="32dp"
 
 
-        android:backgroundTint="#113027"
+
 
 
         android:fontFamily="sans-serif-medium"
@@ -89,12 +89,14 @@
         android:textColor="#fcfcfc"
         android:textSize="14sp"
         android:textStyle="bold"
-        app:cornerRadius="25dp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout22"
-        tools:onClick="registrarse" />
+        tools:onClick="registrarse"
+
+        android:background="@drawable/button_rounded"/>
 
     <TextView
         android:id="@+id/t_inicio_sesion"
@@ -102,14 +104,14 @@
         android:layout_width="328dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="29dp"
-        android:backgroundTint="#F2F3F2"
-        android:fontFamily="sans-serif-black"
+        android:backgroundTint="#FFFFFF"
+        android:fontFamily="@font/amatica_sc_bold"
         android:gravity="center_horizontal"
         android:lineSpacingExtra="9.8sp"
-        android:text="@string/reg_aqui"
+        android:text="Registro"
         android:textAlignment="center"
-        android:textColor="#F2F3F2"
-        android:textSize="24sp"
+        android:textColor="#000000"
+        android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -252,7 +254,7 @@
             android:fontFamily="sans-serif-medium"
             android:letterSpacing="0.01"
 
-
+            android:inputType="textPassword"
             android:lineSpacingExtra="8sp"
             android:text="Contraseña"
             android:textColor="#99273431"
@@ -295,6 +297,17 @@
             android:text="Continuar con Google"
             android:textSize="15sp" />
     </RelativeLayout>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:onClick="lita_clientes"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_iniciosesion" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

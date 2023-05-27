@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.proyecto.flujos.cliente.LProductosActivity;
 import com.example.proyecto.flujos.cliente.ListaSingPlantasAdapter;
+import com.example.proyecto.flujos.manager.ManagerActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -92,6 +93,11 @@ public class Login extends AppCompatActivity {
     public void LISTA(View view){
         Intent iniciar = new Intent(this, ListaSingPlantasAdapter.class);
         startActivity(iniciar);
+
+    }
+    public void login_manager(View view){
+        Intent iniciar2 = new Intent(this, ManagerActivity.class);
+        startActivity(iniciar2);
     }
 
 }

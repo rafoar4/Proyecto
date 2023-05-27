@@ -7,20 +7,21 @@
     android:backgroundTint="@color/fondo"
     android:background="@color/fondo"
     tools:context=".flujos.manager.AddPlantaActivity">
+
     <TextView
-        android:id="@+id/t_agrega_planta"
+        android:id="@+id/t_ag_planta"
 
         android:layout_width="328dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="29dp"
-        android:backgroundTint="#F2F3F2"
-        android:fontFamily="sans-serif-black"
+        android:backgroundTint="#FFFFFF"
+        android:fontFamily="@font/amatica_sc_bold"
         android:gravity="center_horizontal"
         android:lineSpacingExtra="9.8sp"
         android:text="Agregar planta"
         android:textAlignment="center"
-        android:textColor="#F2F3F2"
-        android:textSize="24sp"
+        android:textColor="#000000"
+        android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,12 +33,13 @@
         android:id="@+id/image_perfil"
         android:layout_width="128dp"
         android:layout_height="128dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="25dp"
         android:scaleType="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.307"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/t_agrega_planta"
+        app:layout_constraintTop_toBottomOf="@+id/t_ag_planta"
         tools:srcCompat="@tools:sample/avatars" />
 
     <RelativeLayout
@@ -195,10 +197,11 @@
 
     <Button
         android:id="@+id/b_addPlanta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="189dp"
+        android:layout_height="40dp"
         android:layout_marginTop="28dp"
-        android:backgroundTint="#113027"
+
+        android:background="@drawable/button_rounded"
         android:text="Añadir Planta"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -206,9 +209,10 @@
 
     <Button
         android:id="@+id/CancelarAdd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="187dp"
+        android:layout_height="43dp"
         android:layout_marginTop="4dp"
+        android:background="@drawable/button_rounded"
         android:backgroundTint="#952A43"
         android:text="Cancelar"
         app:layout_constraintEnd_toEndOf="parent"
@@ -218,12 +222,14 @@
 
     <Button
         android:id="@+id/selectImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_width="127dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="190dp"
+
         android:layout_marginTop="128dp"
-        android:backgroundTint="#BF483F"
-        android:text="Seleccionar"
-        app:layout_constraintStart_toEndOf="@+id/image_perfil"
+        android:background="@drawable/button_rounded"
+        android:text="Añadir foto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

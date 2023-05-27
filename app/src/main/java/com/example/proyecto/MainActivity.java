@@ -14,6 +14,7 @@ import com.example.proyecto.databinding.ActivityMainBinding;
 import com.example.proyecto.flujos.cliente.ClienteActivity;
 
 import com.example.proyecto.flujos.cliente.LProductosActivity;
+import com.example.proyecto.flujos.manager.LClientesActivity;
 import com.example.proyecto.flujos.manager.ManagerActivity;
 import com.example.proyecto.modelPlanta.Planta;
 import com.example.proyecto.modelUsuario.Usuario;
