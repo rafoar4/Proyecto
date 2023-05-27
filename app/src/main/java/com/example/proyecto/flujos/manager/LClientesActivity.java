@@ -65,7 +65,7 @@ public class LClientesActivity extends AppCompatActivity {
     }
 
     private void EventChangeListener() {
-        db.collection("usuario")
+        db.collection("usuarios")
                 .addSnapshotListener((value, error) -> {
                     if (error!=null){
                         Log.e("msg","Firestore error");
@@ -74,19 +74,23 @@ public class LClientesActivity extends AppCompatActivity {
                     for (DocumentChange dc: value.getDocumentChanges()){
                         Log.e("msg", String.valueOf(dc.getDocument().getData()));
                         if (dc.getType()==DocumentChange.Type.ADDED){
-                            Usuario u= dc.getDocument().toObject(Usuario.class);
+                            Usuario u=new Usuario();
+                            u= dc.getDocument().toObject(Usuario.class);
                             Log.e("TAG", "onEvent: "+u.getNombre() );
-                            usuarios.add(u);
+                            if(u.getRol().equals("cliente")){
+                                usuarios.add(u);
+                            }
+
                             Log.e("TAG", "onCreate: "+usuarios.size());
                             Log.e("msg","no error");
                         }
 
                     }
-                    clientes = usuarios.stream()
+                    /*clientes = usuarios.stream()
                             .filter(usuario -> usuario.getRol().equals("cliente"))
                             .collect(Collectors.toCollection(ArrayList::new));
-                    Log.e("TAG", "onCreate: "+usuarios.size());
-                    adapter.setArrayList(clientes);
+                    Log.e("TAG", "onCreate: "+usuarios.size());*/
+                    adapter.setArrayList(usuarios);
                     recyclerView.setAdapter(adapter);
                     //adapter.notifyDataSetChanged();
 
