@@ -40,18 +40,18 @@
         android:background="@drawable/button_rounded"/>
 
     <Button
-        android:background="@drawable/button_rounded"
         android:id="@+id/bt_registrar"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-
-
         android:layout_marginStart="32dp"
 
 
         android:layout_marginTop="24dp"
 
+
         android:layout_marginEnd="32dp"
+
+        android:background="@drawable/button_rounded"
 
         android:backgroundTint="#281DC6"
         android:fontFamily="sans-serif-medium"
@@ -68,7 +68,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout3"
-        tools:onClick="ingresar" />
+        tools:onClick="register" />
 
     <TextView
         android:id="@+id/t_inicio_sesion"
@@ -126,19 +126,6 @@
             android:textColor="#000000"
             android:textSize="15sp" />
     </RelativeLayout>
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="169dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="84dp"
-        android:background="@drawable/button_rounded"
-        android:onClick="LISTA"
-        android:text="Ver Lista Plantas"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout3" />
 
     <Button
         android:id="@+id/Login_Manager"

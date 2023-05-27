@@ -118,5 +118,9 @@ public class Login extends AppCompatActivity {
         Intent iniciar2 = new Intent(this, ManagerActivity.class);
         startActivity(iniciar2);
     }
+    public void register(View view){
+        Intent iniciar3 = new Intent(this, Register.class);
+        startActivity(iniciar3);
+    }
 
 }
