@@ -8,12 +8,13 @@
     android:background="@color/fondo"
     tools:context=".flujos.manager.AddPlantaActivity">
 
+
     <TextView
         android:id="@+id/t_ag_planta"
 
         android:layout_width="328dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="29dp"
+        android:layout_marginTop="68dp"
         android:backgroundTint="#FFFFFF"
         android:fontFamily="@font/amatica_sc_bold"
         android:gravity="center_horizontal"
@@ -24,20 +25,20 @@
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:lineHeight="33.8sp" />
-
 
     <ImageView
         android:id="@+id/image_perfil"
         android:layout_width="128dp"
         android:layout_height="128dp"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="92dp"
         android:scaleType="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.307"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/t_ag_planta"
         tools:srcCompat="@tools:sample/avatars" />
@@ -46,12 +47,12 @@
         android:id="@+id/relativeLayout_n_nombre"
         android:layout_width="328dp"
         android:layout_height="53dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="96dp"
         android:background="#f2f3f2"
 
         android:backgroundTint="#f2f3f2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.433"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_perfil">
 
@@ -59,15 +60,8 @@
             android:id="@+id/n_nombre"
             android:layout_width="226dp"
             android:layout_height="42dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="52dp"
 
 
-            android:layout_marginBottom="1dp"
             android:fontFamily="sans-serif-medium"
             android:inputType="textEmailAddress"
             android:letterSpacing="0.01"
@@ -77,19 +71,18 @@
             android:textSize="16sp"
             android:textStyle="normal"
             tools:text="Nombre" />
-
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/relativeLayout_n_stock"
         android:layout_width="328dp"
         android:layout_height="53dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="36dp"
         android:background="#f2f3f2"
 
         android:backgroundTint="#f2f3f2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.433"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout_n_nombre">
 
@@ -97,15 +90,12 @@
             android:id="@+id/n_stock"
             android:layout_width="226dp"
             android:layout_height="42dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
             android:layout_marginStart="52dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="-81dp"
             android:layout_marginEnd="52dp"
 
 
-            android:layout_marginBottom="1dp"
+            android:layout_marginBottom="92dp"
             android:fontFamily="sans-serif-medium"
             android:inputType="textEmailAddress"
             android:letterSpacing="0.01"
@@ -115,47 +105,8 @@
             android:textSize="16sp"
             android:textStyle="normal"
             tools:text="Stock" />
-
     </RelativeLayout>
 
-
-    <RelativeLayout
-        android:id="@+id/relativeLayout_n_precio"
-        android:layout_width="328dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="28dp"
-        android:background="#f2f3f2"
-
-        android:backgroundTint="#f2f3f2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout_n_stock">
-
-        <EditText
-            android:id="@+id/n_precio"
-            android:layout_width="226dp"
-            android:layout_height="42dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="52dp"
-
-
-            android:layout_marginBottom="1dp"
-            android:fontFamily="sans-serif-medium"
-            android:inputType="textEmailAddress"
-            android:letterSpacing="0.01"
-            android:lineSpacingExtra="8sp"
-            android:textColor="#99273431"
-            android:textColorHint="#F2F3F2"
-            android:textSize="16sp"
-            android:textStyle="normal"
-            tools:text="Precio" />
-
-    </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/relativeLayout_n_recomendaciones"
@@ -170,28 +121,39 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout_n_precio">
 
-        <EditText
-            android:id="@+id/n_recomendaciones"
-            android:layout_width="226dp"
-            android:layout_height="42dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="52dp"
+        <RelativeLayout
+            android:id="@+id/relativeLayout_n_precio"
+            android:layout_width="328dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="28dp"
+            android:background="#f2f3f2"
+
+            android:backgroundTint="#f2f3f2">
+
+            <EditText
+                android:id="@+id/n_precio"
+                android:layout_width="226dp"
+                android:layout_height="42dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="52dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="52dp"
 
 
-            android:layout_marginBottom="1dp"
-            android:fontFamily="sans-serif-medium"
-            android:inputType="textEmailAddress"
-            android:letterSpacing="0.01"
-            android:lineSpacingExtra="8sp"
-            android:textColor="#99273431"
-            android:textColorHint="#F2F3F2"
-            android:textSize="16sp"
-            android:textStyle="normal"
-            tools:text="Recomendaciones" />
+                android:layout_marginBottom="1dp"
+                android:fontFamily="sans-serif-medium"
+                android:inputType="textEmailAddress"
+                android:letterSpacing="0.01"
+                android:lineSpacingExtra="8sp"
+                android:textColor="#99273431"
+                android:textColorHint="#F2F3F2"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                tools:text="Precio" />
+
+        </RelativeLayout>
 
     </RelativeLayout>
 
@@ -199,24 +161,43 @@
         android:id="@+id/b_addPlanta"
         android:layout_width="189dp"
         android:layout_height="40dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="540dp"
 
         android:background="@drawable/button_rounded"
         android:text="Añadir Planta"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout_n_recomendaciones" />
+
+    <EditText
+        android:id="@+id/n_recomendaciones"
+        android:layout_width="226dp"
+        android:layout_height="42dp"
+
+
+        android:fontFamily="sans-serif-medium"
+        android:inputType="textEmailAddress"
+        android:letterSpacing="0.01"
+        android:lineSpacingExtra="8sp"
+        android:textColor="#99273431"
+        android:textColorHint="#F2F3F2"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        tools:layout_editor_absoluteX="104dp"
+        tools:layout_editor_absoluteY="655dp"
+        tools:text="Recomendaciones" />
 
     <Button
         android:id="@+id/CancelarAdd"
         android:layout_width="187dp"
         android:layout_height="43dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/button_rounded"
         android:backgroundTint="#952A43"
         android:text="Cancelar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/b_addPlanta" />
 
@@ -224,12 +205,14 @@
         android:id="@+id/selectImage"
         android:layout_width="127dp"
         android:layout_height="45dp"
-        android:layout_marginStart="190dp"
+        android:layout_marginStart="135dp"
 
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="352dp"
         android:background="@drawable/button_rounded"
         android:text="Añadir foto"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
