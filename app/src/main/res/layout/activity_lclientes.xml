@@ -15,13 +15,15 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="29dp"
         android:backgroundTint="#F2F3F2"
-        android:fontFamily="sans-serif-black"
+
         android:gravity="center_horizontal"
         android:lineSpacingExtra="9.8sp"
         android:text="Lista de Clientes"
+        android:textSize="34sp"
+        android:fontFamily="@font/amatica_sc_bold"
         android:textAlignment="center"
-        android:textColor="#F2F3F2"
-        android:textSize="24sp"
+        android:textColor="#000000"
+
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
