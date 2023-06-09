@@ -12,8 +12,8 @@
     <TextView
         android:id="@+id/t_ag_planta2"
 
-        android:layout_width="328dp"
-        android:layout_height="wrap_content"
+        android:layout_width="331dp"
+        android:layout_height="57dp"
         android:layout_marginTop="15dp"
         android:backgroundTint="#FFFFFF"
         android:fontFamily="@font/amatica_sc_bold"
@@ -45,11 +45,13 @@
         android:id="@+id/addPlant"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="12dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         android:text="Añadir Planta"
         app:layout_constraintBottom_toTopOf="@+id/recyclerView"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t_ag_planta2" />
 
     <Button
         android:id="@+id/irClientes"
