@@ -34,7 +34,7 @@ public class ListaClientesAdapter extends RecyclerView.Adapter<ListaClientesAdap
     @NonNull
     @Override
     public ListaClientesAdapter.ClienteViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_clientes,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.l_cliente_individual,parent,false);
         return new ClienteViewHolder(view);
     }
 
@@ -43,6 +43,9 @@ public class ListaClientesAdapter extends RecyclerView.Adapter<ListaClientesAdap
 
         Usuario usuario = arrayList.get(position);
         holder.nombre.setText(usuario.getNombre());
+
+        holder.rol.setText(usuario.getRol());
+
         //holder.hora.setText("DD 00:00");
 
 
@@ -56,11 +59,15 @@ public class ListaClientesAdapter extends RecyclerView.Adapter<ListaClientesAdap
     public class ClienteViewHolder extends RecyclerView.ViewHolder {
         TextView nombre;
         TextView hora;
+        TextView apellido;
+        TextView rol;
 
         public ClienteViewHolder(@NonNull View itemView) {
             super(itemView);
             nombre=itemView.findViewById(R.id.nombreCliente);
             hora=itemView.findViewById(R.id.horaMensaje);
+            apellido=itemView.findViewById(R.id.apellido);
+            rol=itemView.findViewById(R.id.rol);
 
         }
     }
