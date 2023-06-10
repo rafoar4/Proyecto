@@ -48,6 +48,7 @@ public class Login extends AppCompatActivity {
 
         btn_log=findViewById(R.id.bt_iniciosesion);
         btn_registrar=findViewById(R.id.bt_registrar);
+
         btn_log.setOnClickListener(v -> {
             login();
         });
