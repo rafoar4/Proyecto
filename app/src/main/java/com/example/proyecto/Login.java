@@ -46,11 +46,12 @@ public class Login extends AppCompatActivity {
 
         btn_log=findViewById(R.id.bt_iniciosesion);
         btn_registrar=findViewById(R.id.bt_registrar);
+
         btn_log.setOnClickListener(v -> {
             login();
         });
         btn_registrar.setOnClickListener(v -> {
-            startActivity(new Intent(Login.this,Register.class));
+            startActivity(new Intent(Login.this,MainActivity.class));
         });
 
 
