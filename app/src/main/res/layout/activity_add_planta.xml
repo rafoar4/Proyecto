@@ -78,7 +78,7 @@
         android:backgroundTint="#FFFFFF"
         android:fontFamily="sans-serif-medium"
         android:hint="Stock"
-        android:inputType="textEmailAddress"
+        android:inputType="number"
         android:letterSpacing="0.01"
         android:lineSpacingExtra="8sp"
         android:textColor="#000000"
@@ -126,7 +126,7 @@
         android:backgroundTint="#FFFFFF"
         android:fontFamily="sans-serif-medium"
         android:hint="Precio"
-        android:inputType="textEmailAddress"
+        android:inputType="number"
         android:letterSpacing="0.01"
         android:lineSpacingExtra="8sp"
         android:textColor="#000000"
@@ -150,19 +150,6 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/n_precio" />
-
-    <Button
-        android:id="@+id/CancelarAdd"
-        android:layout_width="187dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/button_rounded"
-        android:backgroundTint="#952A43"
-        android:text="Cancelar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/b_addPlanta" />
 
     <Button
         android:id="@+id/selectImage"

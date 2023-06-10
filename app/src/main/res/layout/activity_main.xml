@@ -8,95 +8,32 @@
     android:backgroundTint="@color/fondo"
     tools:context=".MainActivity">
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout22"
-        android:layout_width="328dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="16dp"
-        android:background="#F2F3F2"
-        android:backgroundTint="#F2F3F2"
-        app:layout_constraintEnd_toEndOf="@+id/relativeLayout"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
-
-        <EditText
-            android:id="@+id/t_pass2"
-            android:layout_width="224dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="53dp"
-            android:layout_marginBottom="1dp"
-            android:fontFamily="sans-serif-medium"
-            android:letterSpacing="0.01"
-
-            android:inputType="textPassword"
-            android:lineSpacingExtra="8sp"
-            android:text="Repita Contraseña"
-            android:textColor="#99273431"
-            android:textColorHint="#F2F3F2"
-            android:textSize="16sp"
-            android:textStyle="normal" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/relativeLayout23"
-        android:layout_width="328dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="16dp"
-        android:background="#F2F3F2"
-        android:backgroundTint="#F2F3F2"
-        app:layout_constraintEnd_toEndOf="@+id/relativeLayout2"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2">
-
-        <EditText
-            android:id="@+id/t_direc"
-            android:layout_width="224dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="53dp"
-            android:layout_marginBottom="1dp"
-            android:fontFamily="sans-serif-medium"
-            android:letterSpacing="0.01"
-
-
-            android:lineSpacingExtra="8sp"
-            android:text="Direccion"
-            android:textColor="#99273431"
-            android:textColorHint="#F2F3F2"
-            android:textSize="16sp"
-            android:textStyle="normal" />
-    </RelativeLayout>
-
     <Button
         android:id="@+id/bt_iniciosesion"
         android:layout_width="200dp"
         android:layout_height="45dp"
-        android:layout_marginTop="32dp"
 
 
+        android:layout_marginTop="20dp"
 
-
+        android:background="@drawable/button_rounded"
 
         android:fontFamily="sans-serif-medium"
-
         android:gravity="center_horizontal|center_vertical"
-
         android:letterSpacing="0.08"
         android:lineSpacingExtra="9.8sp"
         android:text="Registrarse"
         android:textAllCaps="false"
         android:textColor="#fcfcfc"
+
         android:textSize="14sp"
         android:textStyle="bold"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout22"
-        tools:onClick="registrarse"
 
-        android:background="@drawable/button_rounded"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t_pass2"
+        tools:onClick="registrarse" />
 
     <TextView
         android:id="@+id/t_inicio_sesion"
@@ -118,155 +55,150 @@
         app:layout_constraintTop_toTopOf="parent"
         app:lineHeight="33.8sp" />
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout2"
-        android:layout_width="328dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="16dp"
-        android:background="#f2f3f2"
-        android:backgroundTint="#f2f3f2"
+    <EditText
+        android:id="@+id/nombre"
+        android:layout_width="match_parent"
+        android:layout_height="39dp"
+
+
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="#FFFFFF"
+        android:fontFamily="sans-serif-medium"
+        android:hint="Nombre"
+        android:inputType="textEmailAddress"
+        android:letterSpacing="0.01"
+        android:lineSpacingExtra="8sp"
+        android:textColor="#000000"
+        android:textColorHint="#5C000000"
+        android:textSize="16sp"
+        android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/apellidoregistro">
+        app:layout_constraintTop_toBottomOf="@+id/t_inicio_sesion" />
 
-        <EditText
-            android:id="@+id/t_email"
-            android:layout_width="226dp"
-            android:layout_height="42dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="52dp"
+    <EditText
+        android:id="@+id/apellido"
+        android:layout_width="match_parent"
+        android:layout_height="39dp"
 
 
-            android:layout_marginBottom="1dp"
-            android:fontFamily="sans-serif-medium"
-            android:inputType="textEmailAddress"
-            android:letterSpacing="0.01"
-            android:lineSpacingExtra="8sp"
-            android:text="Correo Electronico"
-            android:textColor="#99273431"
-            android:textColorHint="#F2F3F2"
-            android:textSize="16sp"
-            android:textStyle="normal" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/nombreregistro"
-        android:layout_width="328dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="124dp"
-        android:background="#f2f3f2"
-        android:backgroundTint="#f2f3f2"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="#FFFFFF"
+        android:fontFamily="sans-serif-medium"
+        android:hint="Apellido"
+        android:inputType="textEmailAddress"
+        android:letterSpacing="0.01"
+        android:lineSpacingExtra="8sp"
+        android:textColor="#000000"
+        android:textColorHint="#5C000000"
+        android:textSize="16sp"
+        android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/nombre" />
 
-        <EditText
-            android:id="@+id/nombre"
-            android:layout_width="226dp"
-            android:layout_height="42dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="52dp"
+    <EditText
+        android:id="@+id/t_email"
+        android:layout_width="match_parent"
+        android:layout_height="39dp"
 
 
-            android:layout_marginBottom="1dp"
-            android:fontFamily="sans-serif-medium"
-            android:inputType="textEmailAddress"
-            android:letterSpacing="0.01"
-            android:lineSpacingExtra="8sp"
-            android:text="Nombre"
-            android:textColor="#99273431"
-            android:textColorHint="#F2F3F2"
-            android:textSize="16sp"
-            android:textStyle="normal" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/apellidoregistro"
-        android:layout_width="328dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="16dp"
-        android:background="#f2f3f2"
-        android:backgroundTint="#f2f3f2"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="#FFFFFF"
+        android:fontFamily="sans-serif-medium"
+        android:hint="Correo Electronico"
+        android:inputType="textEmailAddress"
+        android:letterSpacing="0.01"
+        android:lineSpacingExtra="8sp"
+        android:textColor="#000000"
+        android:textColorHint="#5C000000"
+        android:textSize="16sp"
+        android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nombreregistro">
+        app:layout_constraintTop_toBottomOf="@+id/apellido" />
 
-        <EditText
-            android:id="@+id/apellido"
-            android:layout_width="226dp"
-            android:layout_height="42dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="52dp"
+    <EditText
+        android:id="@+id/t_direc"
+        android:layout_width="match_parent"
+        android:layout_height="39dp"
 
 
-            android:layout_marginBottom="1dp"
-            android:fontFamily="sans-serif-medium"
-            android:inputType="textEmailAddress"
-            android:letterSpacing="0.01"
-            android:lineSpacingExtra="8sp"
-            android:text="Apellido"
-            android:textColor="#99273431"
-            android:textColorHint="#F2F3F2"
-            android:textSize="16sp"
-            android:textStyle="normal" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
-        android:layout_width="328dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="#F2F3F2"
-        android:backgroundTint="#F2F3F2"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="#FFFFFF"
+        android:fontFamily="sans-serif-medium"
+        android:hint="Dirección"
+        android:inputType="textEmailAddress"
+        android:letterSpacing="0.01"
+        android:lineSpacingExtra="8sp"
+        android:textColor="#000000"
+        android:textColorHint="#5C000000"
+        android:textSize="16sp"
+        android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout23">
+        app:layout_constraintTop_toBottomOf="@+id/t_email" />
 
-        <EditText
-            android:id="@+id/t_pass"
-            android:layout_width="224dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="51dp"
-            android:layout_marginBottom="-1dp"
-            android:fontFamily="sans-serif-medium"
-            android:letterSpacing="0.01"
+    <EditText
+        android:id="@+id/t_pass"
+        android:layout_width="match_parent"
+        android:layout_height="39dp"
 
-            android:inputType="textPassword"
-            android:lineSpacingExtra="8sp"
-            android:text="Contraseña"
-            android:textColor="#99273431"
-            android:textColorHint="#F2F3F2"
-            android:textSize="16sp"
-            android:textStyle="normal" />
-    </RelativeLayout>
+        android:inputType="textPassword"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="#FFFFFF"
+        android:fontFamily="sans-serif-medium"
+        android:hint="Contraseña"
+
+        android:letterSpacing="0.01"
+        android:lineSpacingExtra="8sp"
+        android:textColor="#000000"
+        android:textColorHint="#5C000000"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t_direc" />
+
+    <EditText
+        android:id="@+id/t_pass2"
+        android:layout_width="match_parent"
+        android:layout_height="39dp"
+        android:inputType="textPassword"
+
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="#FFFFFF"
+        android:fontFamily="sans-serif-medium"
+        android:hint="Repita Contraseña"
+
+        android:letterSpacing="0.01"
+        android:lineSpacingExtra="8sp"
+        android:textColor="#000000"
+        android:textColorHint="#5C000000"
+        android:textSize="16sp"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/t_pass" />
+
 
     <RelativeLayout
         android:layout_width="230dp"
         android:layout_height="45dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="20dp"
         android:background="#F2F3F2"
         android:onClick="registrarse"
         app:layout_constraintEnd_toEndOf="parent"
@@ -291,23 +223,13 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="14dp"
+            android:layout_marginEnd="10dp"
             android:layout_marginBottom="12dp"
             android:fontFamily="sans-serif-medium"
             android:text="Continuar con Google"
+            android:textColor="#000000"
             android:textSize="15sp" />
     </RelativeLayout>
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:onClick="lita_clientes"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_iniciosesion" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

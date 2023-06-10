@@ -52,6 +52,7 @@ public class LClientesActivity extends AppCompatActivity {
         EventChangeListener();
 
         adapter= new ListaClientesAdapter(LClientesActivity.this);
+        //------
         casa=findViewById(R.id.irCasa_lcli);
         casa.setOnClickListener(view -> {
             Intent intent_Casa  =new Intent(LClientesActivity.this, ManagerActivity.class);
