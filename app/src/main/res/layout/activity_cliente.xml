@@ -17,4 +17,48 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#0D8112"
+        android:backgroundTint="#0D8112"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/irCasa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#0D8112"
+            app:srcCompat="@drawable/baseline_home_24" />
+
+        <ImageButton
+            android:id="@+id/irTienda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#0D8112"
+            app:srcCompat="@drawable/baseline_yard_24" />
+
+        <ImageButton
+            android:id="@+id/irServicios"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#0D8112"
+            app:srcCompat="@drawable/baseline_text_snippet_24" />
+
+        <ImageButton
+            android:id="@+id/irContacto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#0D8112"
+            app:srcCompat="@drawable/baseline_person_24" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -49,16 +49,7 @@ public class LClientesActivity extends AppCompatActivity {
 
         adapter= new ListaClientesAdapter(LClientesActivity.this);
 
-        b_regresar= findViewById(R.id.regresar);
-        b_regresar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                Intent intent= new Intent(LClientesActivity.this, ManagerActivity.class);
-                startActivity(intent);
-
-            }
-        });
 
 
 
