@@ -12,8 +12,10 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.example.proyecto.R;
 import com.example.proyecto.databinding.ActivityAddPlantaBinding;
 import com.example.proyecto.modelPlanta.Planta;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -40,7 +42,7 @@ public class AddPlantaActivity extends AppCompatActivity {
     StorageReference storageReference;
     String filename;
 
-
+    ImageButton casa,servicios,contacto;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +64,23 @@ public class AddPlantaActivity extends AppCompatActivity {
 
                 subirPlanta();
             }
+        });
+        //--
+        casa=findViewById(R.id.irCasa_agregar);
+        casa.setOnClickListener(view -> {
+            Intent intent_Casa  =new Intent(AddPlantaActivity.this, ManagerActivity.class);
+            startActivity(intent_Casa);
+        });
+
+        servicios=findViewById(R.id.Reportes_agregar);
+        servicios.setOnClickListener(view -> {
+            Intent intent=new Intent(AddPlantaActivity.this, LReportesActivity.class);
+            startActivity(intent);
+        });
+        contacto=findViewById(R.id.irClientes_agregar);
+        contacto.setOnClickListener(view -> {
+            Intent intent=new Intent(AddPlantaActivity.this, LClientesActivity.class);
+            startActivity(intent);
         });
     }
 

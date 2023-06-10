@@ -10,8 +10,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
+import com.example.proyecto.Carrito;
 import com.example.proyecto.R;
+import com.example.proyecto.flujos.cliente.ClienteActivity;
+import com.example.proyecto.flujos.cliente.LProductosActivity;
 import com.example.proyecto.modelPlanta.Planta;
 import com.example.proyecto.modelUsuario.Usuario;
 import com.google.firebase.firestore.DocumentChange;
@@ -32,7 +36,7 @@ public class LClientesActivity extends AppCompatActivity {
     ArrayList<Usuario> clientes;
 
     Button b_regresar;
-
+    ImageButton casa,tienda,servicios,contacto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +52,22 @@ public class LClientesActivity extends AppCompatActivity {
         EventChangeListener();
 
         adapter= new ListaClientesAdapter(LClientesActivity.this);
+        casa=findViewById(R.id.irCasa_lcli);
+        casa.setOnClickListener(view -> {
+            Intent intent_Casa  =new Intent(LClientesActivity.this, ManagerActivity.class);
+            startActivity(intent_Casa);
+        });
+
+        servicios=findViewById(R.id.Reportes_lcli);
+        servicios.setOnClickListener(view -> {
+            Intent intent=new Intent(LClientesActivity.this, LReportesActivity.class);
+            startActivity(intent);
+        });
+        contacto=findViewById(R.id.irClientes_lcli);
+        contacto.setOnClickListener(view -> {
+            Intent intent=new Intent(LClientesActivity.this, LClientesActivity.class);
+            startActivity(intent);
+        });
 
 
 

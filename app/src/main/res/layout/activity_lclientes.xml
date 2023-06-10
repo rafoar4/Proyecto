@@ -50,7 +50,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
-            android:id="@+id/irCasa"
+            android:id="@+id/irCasa_lcli"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -58,15 +58,7 @@
             app:srcCompat="@drawable/baseline_home_24" />
 
         <ImageButton
-            android:id="@+id/irTienda"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="#0D8112"
-            app:srcCompat="@drawable/baseline_yard_24" />
-
-        <ImageButton
-            android:id="@+id/irServicios"
+            android:id="@+id/Reportes_lcli"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -74,7 +66,7 @@
             app:srcCompat="@drawable/baseline_text_snippet_24" />
 
         <ImageButton
-            android:id="@+id/irContacto"
+            android:id="@+id/irClientes_lcli"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

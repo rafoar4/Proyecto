@@ -9,7 +9,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.ImageButton;
 
+import com.example.proyecto.Carrito;
+import com.example.proyecto.ContactoActivity;
 import com.example.proyecto.Login;
 import com.example.proyecto.R;
 import com.example.proyecto.modelPlanta.Planta;
@@ -32,6 +35,7 @@ public class LProductosActivity extends AppCompatActivity {
     Button logout;
 
     FirebaseAuth auth;
+    ImageButton casa,tienda,servicios,contacto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +59,28 @@ public class LProductosActivity extends AppCompatActivity {
         logout.setOnClickListener(v -> {
             auth.signOut();
             startActivity(new Intent(LProductosActivity.this, Login.class));
+        });
+
+        //--
+        casa=findViewById(R.id.irCasa);
+        casa.setOnClickListener(view -> {
+            Intent intent_Casa  =new Intent(LProductosActivity.this, ClienteActivity.class);
+            startActivity(intent_Casa);
+        });
+        tienda=findViewById(R.id.irTienda);
+        tienda.setOnClickListener(view -> {
+            Intent intent_tienda=new Intent(LProductosActivity.this,LProductosActivity.class);
+            startActivity(intent_tienda);
+        });
+        servicios=findViewById(R.id.irServicios);
+        servicios.setOnClickListener(view -> {
+            Intent intent=new Intent(LProductosActivity.this, Carrito.class);
+            startActivity(intent);
+        });
+        contacto=findViewById(R.id.irContacto);
+        contacto.setOnClickListener(view -> {
+            Intent intent=new Intent(LProductosActivity.this, ContactoActivity.class);
+            startActivity(intent);
         });
     }
 

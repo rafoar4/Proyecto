@@ -10,8 +10,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.ImageButton;
 
+import com.example.proyecto.Carrito;
+import com.example.proyecto.ContactoActivity;
 import com.example.proyecto.R;
+import com.example.proyecto.flujos.cliente.ClienteActivity;
+import com.example.proyecto.flujos.cliente.LProductosActivity;
 import com.example.proyecto.modelPlanta.Planta;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.EventListener;
@@ -33,7 +38,7 @@ public class ManagerActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
 
     Button b_addPlanta,irCompras,irClientes,irReportes;
-
+    ImageButton casa,servicios,contacto;
 
 
 
@@ -79,6 +84,24 @@ public class ManagerActivity extends AppCompatActivity {
         irReportes=findViewById(R.id.irReportes);
         irReportes.setOnClickListener(view -> {
             Intent intent=new Intent(ManagerActivity.this,LReportesActivity.class);
+            startActivity(intent);
+        });
+//-------
+
+        casa=findViewById(R.id.irCasa_manager);
+        casa.setOnClickListener(view -> {
+            Intent intent_Casa  =new Intent(ManagerActivity.this, ManagerActivity.class);
+            startActivity(intent_Casa);
+        });
+
+        servicios=findViewById(R.id.Reportes_manager);
+        servicios.setOnClickListener(view -> {
+            Intent intent=new Intent(ManagerActivity.this, LReportesActivity.class);
+            startActivity(intent);
+        });
+        contacto=findViewById(R.id.irClientes_barra_magng);
+        contacto.setOnClickListener(view -> {
+            Intent intent=new Intent(ManagerActivity.this, LClientesActivity.class);
             startActivity(intent);
         });
 

@@ -6,27 +6,8 @@
     android:layout_height="match_parent"
     android:backgroundTint="@color/fondo"
     android:background="@color/fondo"
-    tools:context=".flujos.manager.LReportesActivity">
+    tools:context=".ContactoActivity">
 
-    <TextView
-        android:id="@+id/t_agrega_planta"
-
-        android:layout_width="328dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="29dp"
-
-        android:fontFamily="@font/amatica_sc_bold"
-        android:gravity="center_horizontal"
-        android:lineSpacingExtra="9.8sp"
-        android:text="Lista de Reportes"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:lineHeight="33.8sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -39,7 +20,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
-            android:id="@+id/irCasa_lreport"
+            android:id="@+id/irCasa_c"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -47,19 +28,40 @@
             app:srcCompat="@drawable/baseline_home_24" />
 
         <ImageButton
-            android:id="@+id/reportes_lreport"
+            android:id="@+id/irTienda_c"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="#0D8112"
-            app:srcCompat="@drawable/baseline_text_snippet_24" />
+            app:srcCompat="@drawable/baseline_yard_24" />
 
         <ImageButton
-            android:id="@+id/irClientes_lreport"
+            android:id="@+id/irServicios_c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#0D8112"
+            app:srcCompat="@drawable/baseline_shopping_cart_checkout_24" />
+
+        <ImageButton
+            android:id="@+id/irContacto_c"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="#0D8112"
             app:srcCompat="@drawable/baseline_person_24" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:text="Contacto:"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

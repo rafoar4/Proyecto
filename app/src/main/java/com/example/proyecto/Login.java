@@ -12,8 +12,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.proyecto.flujos.cliente.ClienteActivity;
 import com.example.proyecto.flujos.cliente.LProductosActivity;
 import com.example.proyecto.flujos.cliente.ListaSingPlantasAdapter;
+import com.example.proyecto.flujos.manager.LClientesActivity;
 import com.example.proyecto.flujos.manager.ManagerActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -50,8 +52,10 @@ public class Login extends AppCompatActivity {
             login();
         });
         btn_registrar.setOnClickListener(v -> {
-            startActivity(new Intent(Login.this,Register.class));
+            startActivity(new Intent(Login.this,MainActivity.class));
         });
+
+
 
 
     }
@@ -77,7 +81,7 @@ public class Login extends AppCompatActivity {
                             public void onSuccess(DocumentSnapshot documentSnapshot) {
                                 Log.e("ga", "onSuccess: "+ documentSnapshot.get("rol"));
                                 if(documentSnapshot.get("rol").equals("cliente")){
-                                    startActivity(new Intent(Login.this,LProductosActivity.class));
+                                    startActivity(new Intent(Login.this, ClienteActivity.class));
                                 }else {
                                     startActivity(new Intent(Login.this,ManagerActivity.class));
                                 }
@@ -118,9 +122,6 @@ public class Login extends AppCompatActivity {
         Intent iniciar2 = new Intent(this, ManagerActivity.class);
         startActivity(iniciar2);
     }
-    public void register(View view){
-        Intent iniciar3 = new Intent(this, Register.class);
-        startActivity(iniciar3);
-    }
+
 
 }

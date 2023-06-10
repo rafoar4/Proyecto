@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constrain"
+    android:id="@+id/irReportes_manager"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:backgroundTint="@color/fondo"
@@ -51,7 +51,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/irCasa_manager"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -59,15 +59,7 @@
             app:srcCompat="@drawable/baseline_home_24" />
 
         <ImageButton
-            android:id="@+id/imageButton8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="#0D8112"
-            app:srcCompat="@drawable/baseline_yard_24" />
-
-        <ImageButton
-            android:id="@+id/imageButton2"
+            android:id="@+id/Reportes_manager"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -75,7 +67,7 @@
             app:srcCompat="@drawable/baseline_text_snippet_24" />
 
         <ImageButton
-            android:id="@+id/imageButton9"
+            android:id="@+id/irClientes_barra_magng"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -88,7 +80,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="+ Planta"
+        android:text="+Planta"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/t_ag_planta2" />
 
@@ -105,7 +97,6 @@
         android:id="@+id/irReportes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
         android:layout_marginTop="5dp"
         android:text="Reportes"
         app:layout_constraintStart_toEndOf="@+id/irClientes"
