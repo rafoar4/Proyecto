@@ -10,7 +10,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.example.proyecto.Carrito;
 import com.example.proyecto.ContactoActivity;
@@ -41,11 +43,27 @@ public class ManagerActivity extends AppCompatActivity {
     ImageButton casa,servicios,contacto;
 
 
+    EditText etSearch;
+    ImageButton btnSearch;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manager);
+
+        etSearch = findViewById(R.id.et_search);
+        btnSearch = findViewById(R.id.btn_search);
+
+        btnSearch.setOnClickListener(view -> {
+            String searchTerm = etSearch.getText().toString().trim().toLowerCase();
+            searchPlantas(searchTerm);
+
+        });
+
+
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
@@ -108,15 +126,42 @@ public class ManagerActivity extends AppCompatActivity {
 
 
 
-
-
-
-
-
     }
+
+    private void searchPlantas(String searchTerm) {
+        progressDialog.setMessage("Buscando plantas...");
+        progressDialog.show();
+
+        db.collection("plantas")
+                .orderBy("nombre")
+                .startAt(searchTerm)
+                .endAt(searchTerm + "\uf8ff")
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                        if (error != null) {
+                            progressDialog.dismiss();
+                            Log.e("msg", "Firestore error");
+                            return;
+                        }
+
+                        plantas.clear();
+
+                        for (DocumentChange dc : value.getDocumentChanges()) {
+                            if (dc.getType() == DocumentChange.Type.ADDED) {
+                                plantas.add(dc.getDocument().toObject(Planta.class));
+                                Log.e("msg", dc.getDocument().toObject(Planta.class).getI_perfil());
+                            }
+                        }
+
+                        adapter.notifyDataSetChanged();
+                        progressDialog.dismiss();
+                    }
+                });
+    }
+
     private void EventChangeListener(){
         db.collection("plantas")
-                .orderBy("nombre", Query.Direction.ASCENDING)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {

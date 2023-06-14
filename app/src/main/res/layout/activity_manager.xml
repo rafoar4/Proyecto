@@ -5,8 +5,8 @@
     android:id="@+id/irReportes_manager"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/fondo"
     android:background="@color/fondo"
+    android:backgroundTint="@color/fondo"
     tools:context=".flujos.manager.ManagerActivity">
 
     <TextView
@@ -14,7 +14,7 @@
 
         android:layout_width="331dp"
         android:layout_height="57dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="24dp"
         android:backgroundTint="#FFFFFF"
         android:fontFamily="@font/amatica_sc_bold"
         android:gravity="center_horizontal"
@@ -30,16 +30,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:lineHeight="33.8sp" />
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="382dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="130dp"
-        android:layout_marginBottom="105dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="466dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.551"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/search_layout" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="45dp"
@@ -79,17 +80,24 @@
         android:id="@+id/addPlant"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginStart="4dp"
         android:text="+Planta"
+        android:textSize="11sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/t_ag_planta2" />
+        app:layout_constraintStart_toEndOf="@+id/irCompras"
+        app:layout_constraintTop_toTopOf="@+id/irCompras" />
 
     <Button
         android:id="@+id/irClientes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
         android:text="Clientes"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/irReportes"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/t_ag_planta2" />
 
@@ -97,18 +105,59 @@
         android:id="@+id/irReportes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
         android:text="Reportes"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/irCompras"
         app:layout_constraintStart_toEndOf="@+id/irClientes"
-        app:layout_constraintTop_toBottomOf="@+id/t_ag_planta2" />
+        app:layout_constraintTop_toTopOf="@+id/irClientes" />
 
     <Button
         android:id="@+id/irCompras"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
         android:text="Compras"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/addPlant"
         app:layout_constraintStart_toEndOf="@+id/irReportes"
-        app:layout_constraintTop_toBottomOf="@+id/t_ag_planta2" />
+        app:layout_constraintTop_toTopOf="@+id/irReportes" />
+
+
+    <LinearLayout
+        android:id="@+id/search_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/irReportes">
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="8dp"
+            android:hint="Buscar planta..."
+            android:paddingStart="16dp"
+            android:paddingEnd="8dp" />
+
+        <ImageButton
+            android:id="@+id/btn_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:src="@drawable/baseline_search_24"
+            android:padding="8dp" />
+
+    </LinearLayout>
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

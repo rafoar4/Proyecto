@@ -41,6 +41,8 @@ public class ListaPlantasAdapter extends RecyclerView.Adapter<ListaPlantasAdapte
         this.arrayList = arrayList;
     }
 
+
+
     @NonNull
     @Override
     public com.example.proyecto.flujos.manager.ListaPlantasAdapter.PlantaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
