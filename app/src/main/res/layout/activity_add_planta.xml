@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/fondo"
     android:background="@color/fondo"
+    android:backgroundTint="@color/fondo"
     tools:context=".flujos.manager.AddPlantaActivity">
 
 
@@ -14,7 +14,7 @@
 
         android:layout_width="328dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="24dp"
         android:backgroundTint="#FFFFFF"
         android:fontFamily="@font/amatica_sc_bold"
         android:gravity="center_horizontal"
@@ -42,6 +42,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/t_ag_planta"
         tools:srcCompat="@tools:sample/avatars" />
+
     <EditText
         android:id="@+id/n_nombre"
         android:layout_width="match_parent"
@@ -49,7 +50,7 @@
 
 
         android:layout_marginStart="20dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="20dp"
         android:backgroundTint="#FFFFFF"
         android:fontFamily="sans-serif-medium"
@@ -63,7 +64,7 @@
         android:textStyle="normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selectImage" />
+        app:layout_constraintTop_toBottomOf="@+id/selectAdditionalImages" />
 
 
     <EditText
@@ -143,7 +144,7 @@
         android:layout_width="189dp"
         android:layout_height="40dp"
 
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/button_rounded"
         android:text="Añadir Planta"
         app:layout_constraintEnd_toEndOf="parent"
@@ -155,15 +156,75 @@
         android:id="@+id/selectImage"
         android:layout_width="127dp"
         android:layout_height="45dp"
-        android:layout_marginStart="135dp"
 
         android:layout_marginTop="12dp"
         android:background="@drawable/button_rounded"
-        android:text="Añadir foto"
+        android:text="Foto principal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_perfil" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectImage">
+
+        <ImageView
+            android:id="@+id/imageAdditional1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="5dp"
+            android:scaleType="center"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <ImageView
+            android:id="@+id/imageAdditional2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="5dp"
+            android:scaleType="center"
+            app:layout_constraintStart_toEndOf="@+id/imageAdditional1"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <ImageView
+            android:id="@+id/imageAdditional3"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="5dp"
+            android:scaleType="center"
+            app:layout_constraintStart_toEndOf="@+id/imageAdditional2"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <ImageView
+            android:id="@+id/imageAdditional4"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="5dp"
+            android:scaleType="center"
+            app:layout_constraintStart_toEndOf="@+id/imageAdditional3"
+            tools:srcCompat="@tools:sample/avatars" />
+
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/selectAdditionalImages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seleccionar imágenes adicionales"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
     <LinearLayout
         android:layout_width="match_parent"

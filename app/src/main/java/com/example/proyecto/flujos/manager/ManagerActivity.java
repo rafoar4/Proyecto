@@ -75,6 +75,8 @@ public class ManagerActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new GridLayoutManager(this,2));
 
         db= FirebaseFirestore.getInstance();
+
+
         plantas = new ArrayList<Planta>();
         adapter= new ListaPlantasAdapter(ManagerActivity.this,plantas);
 
@@ -131,6 +133,7 @@ public class ManagerActivity extends AppCompatActivity {
     private void searchPlantas(String searchTerm) {
         progressDialog.setMessage("Buscando plantas...");
         progressDialog.show();
+        db.clearPersistence();
 
         db.collection("plantas")
                 .orderBy("nombre")
@@ -161,6 +164,7 @@ public class ManagerActivity extends AppCompatActivity {
     }
 
     private void EventChangeListener(){
+        db.clearPersistence();
         db.collection("plantas")
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
@@ -176,7 +180,7 @@ public class ManagerActivity extends AppCompatActivity {
                         for (DocumentChange dc: value.getDocumentChanges()){
                             if (dc.getType()==DocumentChange.Type.ADDED){
                                 plantas.add(dc.getDocument().toObject(Planta.class));
-                                Log.e("msg",dc.getDocument().toObject(Planta.class).getI_perfil());
+                                //Log.e("msg",dc.getDocument().toObject(Planta.class).getI_perfil());
                             }
 
                         }

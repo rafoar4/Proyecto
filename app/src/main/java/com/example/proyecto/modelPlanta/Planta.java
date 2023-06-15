@@ -1,19 +1,22 @@
 package com.example.proyecto.modelPlanta;
 
+import java.util.List;
+
 public class Planta {
 
     private String i_perfil;
-    private String images;
     private String nombre;
     private String precio;
     private String recomendacion;
     private String stock;
 
+    private List<String> l_adicionales;
+
     public Planta(){};
 
-    public Planta(String i_perfil, String images, String nombre, String precio, String recomendacion, String stock) {
+    public Planta(String i_perfil, List<String> l_adicionales, String nombre, String precio, String recomendacion, String stock) {
         this.i_perfil = i_perfil;
-        this.images = images;
+        this.l_adicionales = l_adicionales;
         this.nombre = nombre;
         this.precio = precio;
         this.recomendacion = recomendacion;
@@ -28,12 +31,13 @@ public class Planta {
         this.i_perfil = i_perfil;
     }
 
-    public String getImages() {
-        return images;
+
+    public List<String> getL_adicionales() {
+        return l_adicionales;
     }
 
-    public void setImages(String images) {
-        this.images = images;
+    public void setL_adicionales(List<String> l_adicionales) {
+        this.l_adicionales = l_adicionales;
     }
 
     public String getNombre() {
