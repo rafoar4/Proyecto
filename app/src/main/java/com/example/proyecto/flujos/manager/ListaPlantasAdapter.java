@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -53,35 +54,44 @@ public class ListaPlantasAdapter extends RecyclerView.Adapter<ListaPlantasAdapte
     @Override
     public void onBindViewHolder(@NonNull ListaPlantasAdapter.PlantaViewHolder holder, int position) {
 
-        Planta planta= arrayList.get(position);
+        Planta planta = arrayList.get(position);
         holder.nombre.setText(planta.getNombre());
         holder.precio.setText(planta.getPrecio());
         holder.stock.setText(planta.getStock());
 
-        /*storageReference = FirebaseStorage.getInstance().getReference(planta.getI_perfil());
-        try {
-            File local = File.createTempFile("temp",".jpg");
-            storageReference.getFile(local)
-                    .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
-                @Override
-                public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-                    Bitmap bitmap = BitmapFactory.decodeFile(local.getAbsolutePath());
-                    holder.imageView.setImageBitmap(bitmap);
-                }
-            }).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Log.e("msg","error",e);
-                        }
-                    });
-
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        if (planta.getL_adicionales() != null && planta.getL_adicionales().size() > 0) {
+            holder.go_left.setVisibility(View.VISIBLE);
+            holder.go_right.setVisibility(View.VISIBLE);
+        } else {
+            holder.go_left.setVisibility(View.GONE);
+            holder.go_right.setVisibility(View.GONE);
         }
-*/
-        Glide.with(context).load(planta.getI_perfil()).into(holder.imageView);
-        //Log.d("msg",String.valueOf(planta.getI_perfil()));
-        //holder.uri.setImageURI(Uri.parse(planta.getI_perfil()));
+        holder.go_left.setOnClickListener(view -> {
+            int currentIndex = holder.getCurrentIndex();
+            if (currentIndex > 0) {
+                currentIndex--;
+            } else {
+                currentIndex = planta.getL_adicionales().size();
+            }
+            holder.setCurrentIndex(currentIndex);
+            String imageUrl = holder.getCurrentImage();
+            Glide.with(context).load(imageUrl).into(holder.imageView);
+        });
+        holder.go_right.setOnClickListener(view -> {
+            int currentIndex = holder.getCurrentIndex();
+            if (currentIndex < planta.getL_adicionales().size()) {
+                currentIndex++;
+            } else {
+                currentIndex = 0;
+            }
+            holder.setCurrentIndex(currentIndex);
+            String imageUrl = holder.getCurrentImage();
+            Glide.with(context).load(imageUrl).into(holder.imageView);
+        });
+
+        String imageUrl = holder.getCurrentImage();
+        Glide.with(context).load(imageUrl).into(holder.imageView);
+
 
     }
 
@@ -93,6 +103,9 @@ public class ListaPlantasAdapter extends RecyclerView.Adapter<ListaPlantasAdapte
         TextView nombre, precio,stock;
         ImageView imageView;
 
+        ImageButton go_left,go_right;
+        int currentIndex;
+
 
 
         public PlantaViewHolder(@NonNull View itemView) {
@@ -101,8 +114,25 @@ public class ListaPlantasAdapter extends RecyclerView.Adapter<ListaPlantasAdapte
             stock=itemView.findViewById(R.id.n_stock);
             precio=itemView.findViewById(R.id.n_precio);
             imageView=itemView.findViewById(R.id.imageView);
+            go_left=itemView.findViewById(R.id.go_left);
+            go_right=itemView.findViewById(R.id.go_right);
+            currentIndex=0;
+        }
+        public int getCurrentIndex() {
+            return currentIndex;
+        }
 
+        public void setCurrentIndex(int currentIndex) {
+            this.currentIndex = currentIndex;
+        }
 
+        public String getCurrentImage() {
+            Planta planta = arrayList.get(getAdapterPosition());
+            if (currentIndex == 0) {
+                return planta.getI_perfil();
+            } else {
+                return planta.getL_adicionales().get(currentIndex - 1);
+            }
         }
     }
 }
