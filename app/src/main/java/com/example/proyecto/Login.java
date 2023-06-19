@@ -76,18 +76,22 @@ public class Login extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()){
-                        Toast.makeText(Login.this,"Inicio de sesion correcta",Toast.LENGTH_SHORT).show();
-                        db.collection("usuarios").document(auth.getUid()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                            @Override
-                            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                                Log.e("ga", "onSuccess: "+ documentSnapshot.get("rol"));
-                                if(documentSnapshot.get("rol").equals("cliente")){
-                                    startActivity(new Intent(Login.this, ClienteActivity.class));
-                                }else {
-                                    startActivity(new Intent(Login.this,ManagerActivity.class));
+                        if(auth.getCurrentUser().isEmailVerified()){
+                            Toast.makeText(Login.this,"Inicio de sesion correcta",Toast.LENGTH_SHORT).show();
+                            db.collection("usuarios").document(auth.getUid()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                                @Override
+                                public void onSuccess(DocumentSnapshot documentSnapshot) {
+                                    Log.e("ga", "onSuccess: "+ documentSnapshot.get("rol"));
+                                    if(documentSnapshot.get("rol").equals("cliente")){
+                                        startActivity(new Intent(Login.this, ClienteActivity.class));
+                                    }else {
+                                        startActivity(new Intent(Login.this,ManagerActivity.class));
+                                    }
                                 }
-                            }
-                        });
+                            });
+                        }else {
+                            Toast.makeText(Login.this,"Verifica tu correo para iniciar sesion",Toast.LENGTH_SHORT).show();
+                        }
 
 
                     }else {
@@ -103,7 +107,21 @@ public class Login extends AppCompatActivity {
         super.onStart();
         FirebaseUser currentUser = auth.getCurrentUser();
         if(currentUser != null){
-            reload();
+            if(auth.getCurrentUser().isEmailVerified()){
+                db.collection("usuarios").document(auth.getUid()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        Log.e("ga", "onSuccess: "+ documentSnapshot.get("rol"));
+                        if(documentSnapshot.get("rol").equals("cliente")){
+                            startActivity(new Intent(Login.this, ClienteActivity.class));
+                        }else {
+                            startActivity(new Intent(Login.this,ManagerActivity.class));
+                        }
+                    }
+                });
+
+            }
+
         }
 
 

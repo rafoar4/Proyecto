@@ -108,11 +108,31 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()){
-                        Log.e("TAG", "onComplete: ga2" );
-                        userID=auth.getCurrentUser().getUid();
-                        Log.e("TAG", "onComplete: "+userID );
-                        db=FirebaseFirestore.getInstance();
-                        db.collection("usuarios")
+                        sendVerificationEmail();
+
+
+
+                    }else {
+                        Toast.makeText(MainActivity.this,"Error en el registro"+task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        }
+
+    }
+
+    private void sendVerificationEmail() {
+        if(auth.getCurrentUser()!=null){
+            auth.getCurrentUser().sendEmailVerification()
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if(task.isSuccessful()){
+                                Log.e("TAG", "onComplete: ga2" );
+                                userID=auth.getCurrentUser().getUid();
+                                Log.e("TAG", "onComplete: "+userID );
+                                db=FirebaseFirestore.getInstance();
+                                db.collection("usuarios")
                                         .document(userID)
                                         .set(usuario)
                                         .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -128,17 +148,18 @@ public class MainActivity extends AppCompatActivity {
                                                 e.printStackTrace();
                                             }
                                         });
-                        Toast.makeText(MainActivity.this,"Usuario registrado exitosamente",Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(MainActivity.this,Login.class));
+                                Toast.makeText(MainActivity.this,"Usuario registrado exitosamente",Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(MainActivity.this,Login.class));
+
+                            }else {
+                                Toast.makeText(MainActivity.this,"Ocurrio un problema al enviar correo de verificación",Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(MainActivity.this,Login.class));
 
 
-                    }else {
-                        Toast.makeText(MainActivity.this,"Error en el registro"+task.getException().getMessage(),Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
+                            }
+                        }
+                    });
         }
-
     }
 
     private void showError(EditText input, String s) {
