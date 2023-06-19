@@ -120,7 +120,7 @@ public class Login extends AppCompatActivity {
 
     }
     public void login_manager(View view){
-        Intent iniciar2 = new Intent(this, ManagerActivity.class);
+        Intent iniciar2 = new Intent(this, LProductosActivity.class);
         startActivity(iniciar2);
     }
 

@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 
 import com.example.proyecto.Carrito;
@@ -37,9 +39,19 @@ public class LProductosActivity extends AppCompatActivity {
     FirebaseAuth auth;
     ImageButton casa,tienda,servicios,contacto;
 
+    ProgressDialog progressDialog;
+
+    EditText searchEditText;
+    ImageButton btnSearch;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setCancelable(false);
+        progressDialog.setMessage("Cargando Imagenes");
+        progressDialog.show();
         setContentView(R.layout.activity_lproductos);
 
         recyclerView=findViewById(R.id.recyclerView);
@@ -82,6 +94,51 @@ public class LProductosActivity extends AppCompatActivity {
             Intent intent=new Intent(LProductosActivity.this, ContactoActivity.class);
             startActivity(intent);
         });
+
+        searchEditText = findViewById(R.id.et_search2);
+        btnSearch = findViewById(R.id.btn_search2);
+
+        btnSearch.setOnClickListener(v -> {
+
+            String searchTerm = searchEditText.getText().toString().trim().toLowerCase();
+            searchPlantas(searchTerm);
+
+        });
+
+
+    }
+
+    private void searchPlantas(String searchTerm) {
+        progressDialog.setMessage("Buscando plantas...");
+        progressDialog.show();
+        db.clearPersistence();
+
+        db.collection("plantas")
+                .orderBy("nombre")
+                .startAt(searchTerm)
+                .endAt(searchTerm + "\uf8ff")
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                        if (error != null) {
+                            progressDialog.dismiss();
+                            Log.e("msg", "Firestore error");
+                            return;
+                        }
+
+                        plantas.clear();
+
+                        for (DocumentChange dc : value.getDocumentChanges()) {
+                            if (dc.getType() == DocumentChange.Type.ADDED) {
+                                plantas.add(dc.getDocument().toObject(Planta.class));
+                                Log.e("msg", dc.getDocument().toObject(Planta.class).getI_perfil());
+                            }
+                        }
+
+                        adapter.notifyDataSetChanged();
+                        progressDialog.dismiss();
+                    }
+                });
     }
 
     private void EventChangeListener() {
@@ -91,7 +148,9 @@ public class LProductosActivity extends AppCompatActivity {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
                         if (error != null) {
-
+                            if(progressDialog.isShowing()){
+                                progressDialog.dismiss();
+                            }
                             Log.e("msg","firestore error");
                             return;
                         }
@@ -102,6 +161,9 @@ public class LProductosActivity extends AppCompatActivity {
                             }
                         }
                         adapter.notifyDataSetChanged();
+                        if(progressDialog.isShowing()){
+                            progressDialog.dismiss();
+                        }
                     }
                 });
     }
